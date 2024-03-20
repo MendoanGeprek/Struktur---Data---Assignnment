@@ -1,4 +1,4 @@
-# <h1 align="center">Laporan Praktikum Modul Tipe Data</h1>
+# <h1 align="center">Laporan Praktikum Modul ARRAY</h1>
 <p align="center">Muhammad Djidzan N. N.</p>
 <p align="center">2311102189/IF-11-E</p>
 
