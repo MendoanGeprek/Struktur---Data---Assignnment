@@ -1134,9 +1134,136 @@ int main()
 <img width="693" alt="5" src="https://github.com/MendoanGeprek/Struktur---Data---Assignnment/assets/161665370/151bcf47-c410-4b6e-a1d0-e5d986e46444">
 
 3. Tampilan Operasi Hapus
+<img width="685" alt="6" src="https://github.com/MendoanGeprek/Struktur---Data---Assignnment/assets/161665370/53ec0836-43a6-47e5-b5bf-db2d01c08282">
 
-   ![Uploading 6.PNG…]()
-4.
+4. Tampilan Operasi Ubah
+<img width="690" alt="7" src="https://github.com/MendoanGeprek/Struktur---Data---Assignnment/assets/161665370/a46f4bb9-e7ee-4b05-b1cc-25f034ad9f82">
+
+5. Tampilan Operasi Tampil Data
+<img width="333" alt="8" src="https://github.com/MendoanGeprek/Struktur---Data---Assignnment/assets/161665370/9c9bc26b-2bf3-4de0-85dd-03281c35ca99">
+
+3. Perintah
+
+a). Tambahkan data berikut diantara Farrel dan Denis: Wati 2330004
+
+![image](https://github.com/KotaNamaki/Structure-Data-Assignment/assets/125143781/e464b7c3-d506-4bc5-9504-c5d5092d6b6d) 
+   
+b). Hapus Data Denis
+
+![image](https://github.com/KotaNamaki/Structure-Data-Assignment/assets/125143781/bfcb5dde-dd8e-47f1-b69e-1386e869d2b0)
+
+c). Tambahkan data berikut di awal: Owi 2330000
+
+![image](https://github.com/KotaNamaki/Structure-Data-Assignment/assets/125143781/15078d18-3e58-4c53-a101-2c3838d3edc5)
+
+d). Tambahkan data berikut di akhir: David 23300100
+
+![image](https://github.com/KotaNamaki/Structure-Data-Assignment/assets/125143781/2b1c46c2-5339-483a-b04f-9deb085ed338)
+
+e). Ubah data Udin menjadi data berikut: Idin 23300045
+
+![image](https://github.com/KotaNamaki/Structure-Data-Assignment/assets/125143781/2e1d2c58-4d63-4be3-b5bf-20e17f89b2c3)
+
+f). Ubah data terkahir menjadi berikut: Lucy 23300101
+
+![image](https://github.com/KotaNamaki/Structure-Data-Assignment/assets/125143781/23dad5b3-8919-462e-9870-4ea5baba6857)
+
+g). Hapus Data Awal
+
+![image](https://github.com/KotaNamaki/Structure-Data-Assignment/assets/125143781/23ebaab8-76ae-4f4d-8af3-12cec59f4ffe)
+
+
+h). Ubah data awal menjadi berikut: Bagas 2330002
+
+![image](https://github.com/KotaNamaki/Structure-Data-Assignment/assets/125143781/ad677666-57fb-4b4e-b52d-ef6dfecf323a)
+
+i). Hapus data akhir
+
+![image](https://github.com/KotaNamaki/Structure-Data-Assignment/assets/125143781/715f773c-0f4b-43b0-8fa8-e009cd806bf8)
+
+J). Tampilkan Seluruh Data
+
+![image](https://github.com/KotaNamaki/Structure-Data-Assignment/assets/125143781/1eaa7ba4-ca13-4bce-b284-8f24c04d5d30)
+
+### Deskripsi Progam
+Linked list merupakan salah satu struktur data yang
+terdiri dari sejumlah node (simpul) yang saling terhubung
+melalui pointer. Setiap node terdiri dari data dan pointer yang
+menunjuk ke node berikutnya. Struktur data ini memungkinkan
+penggunaannya untuk membangun daftar yang terdiri dari
+elemen-elemen yang bisa diubah-ubah ukurannya.
+Program tersebut terdiri dari beberapa fungsi, yaitu:
+a. init(): Fungsi ini digunakan untuk menginisialisasi nilai dari
+pointer head dan tail menjadi NULL, sehingga awalnya
+linked list kosong.
+b. isEmpty(): Fungsi ini digunakan untuk memeriksa apakah
+linked list kosong atau tidak. Jika kosong, maka fungsi akan
+mengembalikan nilai true, sedangkan jika tidak kosong,
+maka akan mengembalikan nilai false.
+c. insertDepan(string name, string nim): Fungsi ini digunakan
+untuk menambahkan data ke dalam linked list di posisi
+paling depan. Fungsi ini menerima dua parameter yaitu
+nama dan nim. Data tersebut kemudian disimpan pada
+sebuah node baru, lalu node tersebut disambungkan ke
+linked list. Jika linked list masih kosong, maka pointer head
+dan tail akan menunjuk ke node baru tersebut. Fungsi ini
+juga akan menampilkan pesan yang memberitahukan
+bahwa data berhasil ditambahkan.
+d. insertBelakang(string name, string nim): Fungsi ini
+digunakan untuk menambahkan data ke dalam linked list di
+posisi paling belakang. Cara kerja fungsi ini hampir sama dengan fungsi insertDepan(), namun kali ini node baru
+disambungkan ke node terakhir pada linked list. Fungsi ini
+juga akan menampilkan pesan yang memberitahukan
+bahwa data berhasil ditambahkan.
+e. hitungList(): Fungsi ini digunakan untuk menghitung jumlah
+node pada linked list. Fungsi ini akan mengembalikan nilai
+integer yang menunjukkan jumlah node pada linked list.
+f. insertTengah(string name, string nim, int posisi): Fungsi ini
+digunakan untuk menambahkan data ke dalam linked list di
+posisi tertentu (bukan di posisi paling depan atau paling
+belakang). Fungsi ini menerima tiga parameter yaitu nama,
+nim, dan posisi. Data tersebut kemudian disimpan pada
+sebuah node baru, lalu node tersebut disambungkan ke
+linked list pada posisi yang ditentukan. Fungsi ini juga akan
+menampilkan pesan yang memberitahukan bahwa data
+berhasil ditambahkan pada posisi tertentu.
+g. remove(): Fungsi ini digunakan untuk menghapus data pada
+linked list. Fungsi ini terdiri dari tiga pilihan yaitu hapus pada
+posisi depan, hapus pada posisi tengah, dan hapus pada
+posisi belakang. Setiap pilihan akan meminta input dari
+pengguna untuk menentukan posisi mana yang ingin
+dihapus, kemudian fungsi akan menghapus data pada posisi
+tersebut dan menampilkan pesan yang memberitahukan
+bahwa data berhasil dihapus. Jika posisi yang dimasukkan
+tidak valid, maka akan ditampilkan pesan kesalahan.
+
+## Kesimpulan
+Dalam praktikum circular linked list dan non-circular linked list, kita
+mempelajari dua jenis struktur data yang berbeda dalam pemrograman. Circular
+linked list adalah struktur data di mana setiap node memiliki pointer yang menunjuk
+pada node berikutnya dan node terakhir menunjuk kembali ke node pertama,
+sehingga membentuk lingkaran. Sedangkan non-circular linked list adalah struktur
+data di mana node terakhir menunjuk pada NULL, sehingga tidak membentuk
+lingkaran. Kedua jenis linked list ini memiliki kelebihan dan kekurangan masingmasing. Keuntungan dari circular linked list adalah mudah untuk melakukan
+operasi yang melibatkan pengulangan atau penelusuran dari awal ke akhir daftar,
+karena tidak perlu memeriksa apakah node terakhir menunjuk pada NULL atau
+tidak. Sedangkan keuntungan dari non-circular linked list adalah mudah untuk
+menghapus elemen di akhir daftar, karena hanya perlu menetapkan pointer node
+sebelumnya ke NULL. Kesimpulannya, pilihan antara circular linked list atau
+non circular linked list tergantung pada kebutuhan aplikasi dan operasi yang akan
+dilakukan pada struktur data tersebut. Keduanya adalah alat yang berguna dalam
+pemrograman dan dapat digunakan untuk memecahkan masalah dalam berbagai
+aplikasi.
+
+## Daftar Pusaka
+[1]Sachi Nandan Mohanty, Pabitra Kumar Tripathy, Data Structure and Algorithms Using C++: A Practical Implementation, New York:Scrivener Publishing LLC, 14 January 2021.
+
+[2] A.  S.  Putra,  “2018  Artikel Struktur     Data,     Audit     Dan Jaringan Komputer,” 2018.
+
+## Refrensi
+https://osf.io/preprints/osf/u6qf7
+
+
 
 
    
