@@ -169,6 +169,9 @@ int main() {
     return 0;
 }
 ```
+### Screenshot Progam
+<img width="575" alt="13" src="https://github.com/MendoanGeprek/Struktur---Data---Assignnment/assets/161665370/c630a820-ad54-407e-b38e-e10ac82a0511">
+
 ### Deskripsi Progam
 
 Kode di atas digunakan untuk menjalankan hash table sederhana. Pada struct Node terdapat key & value bertipe data integer, Node* next, dan deklarasi Node. Ada juga class HashTable di mana ada private class dan public class. Dalam private class, dideklarasikan Node** table dan di dalam public class dideklarasikan HashTable(), ~HashTable(), dan fungsi lainnya yang dapat dipakai di int main(). Fungsi lainnya yang dipanggil di int main() adalah:
@@ -280,6 +283,8 @@ int main() {
     return 0;
 }
 ```
+### Screenshot Progam
+<img width="567" alt="14" src="https://github.com/MendoanGeprek/Struktur---Data---Assignnment/assets/161665370/c647ea29-f890-4e16-8cac-1a746a222765">
 
 ### Deskripsi Progam
 
@@ -504,6 +509,35 @@ int main() {
 ### Screenshot Progam
 
 ### A.
+<img width="277" alt="9" src="https://github.com/MendoanGeprek/Struktur---Data---Assignnment/assets/161665370/5313c701-ce7c-4af0-a235-9dc9a6b69b80">
+
+### B dan C
+<img width="573" alt="12" src="https://github.com/MendoanGeprek/Struktur---Data---Assignnment/assets/161665370/3f1483cb-549f-4f43-b33a-5f478d5a129b">
+
+<img width="331" alt="10" src="https://github.com/MendoanGeprek/Struktur---Data---Assignnment/assets/161665370/a9679f87-93c4-4816-84b5-bb51827a80fa">
+
+<img width="379" alt="11" src="https://github.com/MendoanGeprek/Struktur---Data---Assignnment/assets/161665370/8b7c0694-28d5-4ef5-96c8-68068c5f19c7">
+
+### Deskripsi Progam
+
+Kode di atas digunakan untuk menjalankan hash table. Pada struct Mahasiswa_2189 terdapat variable NIM_2189 dengan tipe data long long, Nama_2189 bertipe data string, Nilai_2189 bertipe data int, Mahasiswa_2189* next, dan deklarasi Mahasiswa_2189. Ada juga class HashTable di mana ada private class dan public class. Dalam private class, dideklarasikan Mahasiswa_2189** table dan di dalam public class dideklarasikan HashTable(), ~HashTable(), dan fungsi lainnya yang dapat dipakai di int main(). Fungsi lainnya yang dipanggil di int main() adalah:
+- void Insert_2189(long long NIM_2189, string Nama_2189, int Nilai_2189)</br>
+    Digunakan untuk menambahkan NIM, nama, dan nilai
+- Mahasiswa_2189* SearchNIM_2189(long long NIM_2189)</br>
+    Digunakan untuk mencari data mahasiswa berdasarkan NIM
+- void SearchNilai_2189(int StartScoreRange, int EndScoreRange)</br>
+    Digunakan untuk mencari data mahasiswa berdasarkan range nilai
+- void Remove_2189(long long NIM_2189)</br> 
+    Digunakan untuk menghapus data mahasiswa berdasarkan NIM dalam hash table</br>
+- void Traverse_2189()
+    Digunakan untuk menampilkan data Mahasiswa_2189 dalam hash table</br>
+<p>Dalam int main(), HashTable dideklarasikan dengan objek ht. Program menampilkan menu di mana menu ini memiliki 6 opsi untuk dipilih user. 6 opsi ini diwakili oleh case dalam switch case. Case 1 menjalankan ht.Insert_2189(NIM_2189, Nama_2189, Nilai_2189) untuk menambahkan data mahasiswa, Case 2 menjalankan ht.Remove_2189(NIM_2189) untuk menghapus data mahasiswa, Case 3 menjalankan ht.SearchNIM_2189(NIM_2189) untuk mencari data mahasiswa, Case 4 menjalankan ht.SearchNilai_2189(StartScoreRange, EndScoreRange) untuk mencari data mahasiswa dari range nilai, Case 5 menjalankan ht.Traverse_2189() untuk menampilkan data mahasiswa, dan yang terakhir Case 6 digunakan untuk mengakhiri program tersebut. Sebagai demonstrasi.
+
+### Refrensi
+
+[1] Mailund, T. (2019). The Joys of Hashing: Hash Table Programming with C. Apress.<br/>
+[2] Michael A. Bender, Jake Christensen, Alex Conway, Martin Farach-Colton, Rob Johnson, and Meng-Tsung Tsai. 2019.
+
 
 
 
