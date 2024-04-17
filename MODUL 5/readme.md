@@ -493,7 +493,7 @@ int main() {
                 break;
             }
             case 6:
-                cout << "\nThank you for using Destia program!";
+                cout << "\nThank you!";
                 return 0;
             default:
                 cout << "\nWhat did you just type..?" << endl;
