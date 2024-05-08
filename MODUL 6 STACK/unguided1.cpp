@@ -20,12 +20,12 @@ bool isPalindrome(string str) {
 
 int main() {
     string input;
-    cout << "String Kata: ";
+    cout << "Masukan Kata: ";
     getline(cin, input);
     if (isPalindrome(input)) {
-        cout << "String ini Palindrome." << endl;
+        cout << "Kata ini Palindrome." << endl;
     } else {
-        cout << "String ini bukan Palindrome." << endl;
+        cout << "Kata ini bukan Palindrome." << endl;
     }
     return 0;
 }
