@@ -1,7 +1,7 @@
 # <h1 align="center">Laporan Praktikum Modul 6 Stack </h1>
 <p align="center">Muhammad Djidzan. N. N</p>
 <p align="center">231102189</p>
-<p align="center">IF 11 E</p>
+<p align="center">IF-11-E</p>
 
 ## Dasar Teori Stack
 Tumpukan atau Stack adalah struktur data yang mengikuti prinsip "Last In, First Out" (LIFO), yang berarti elemen yang terakhir dimasukkan ke dalam tumpukan akan menjadi elemen pertama yang diambil. Ini mirip dengan tumpukan buku di atas meja; buku yang terakhir diletakkan di atas tumpukan akan menjadi yang pertama diambil.
@@ -176,15 +176,96 @@ bool isPalindrome(string str) {
 
 int main() {
     string input;
-    cout << "String Kata: ";
+    cout << "Masukan Kata: ";
     getline(cin, input);
     if (isPalindrome(input)) {
-        cout << "String ini Palindrome." << endl;
+        cout << "Kata ini Palindrome." << endl;
     } else {
-        cout << "String ini bukan Palindrome." << endl;
+        cout << "Kata ini bukan Palindrome." << endl;
     }
     return 0;
 }
 ```
 
 ## Ouput
+
+### A.
+<img width="685" alt="ba" src="https://github.com/MendoanGeprek/Struktur---Data---Assignnment/assets/161665370/59361cd5-587c-4fc5-b36c-5853836b3930">
+
+### B.
+<img width="683" alt="buu" src="https://github.com/MendoanGeprek/Struktur---Data---Assignnment/assets/161665370/2f5f8c67-a238-43e9-85f4-5ca41efb2a55">
+
+## Deskripsi Progam
+Program tersebut bertujuan untuk menentukan apakah sebuah kalimat yang dimasukkan pengguna merupakan palindrom atau tidak. saat memeriksa palindrom, program memeriksa setiap karakter secara langsung dari string input asli, sambil mengabaikan karakter non-alphanumeric dan memperhitungkan hanya huruf kecil. Program memeriksa apakah string input yang dimasukkan pengguna adalah palindrom. dengan menggunakan struktur data stack, Program memasukkan setengah karakter pertama dari string input ke dalam stack. Kemudian, program membandingkan setengah karakter kedua dari string input dengan isi stack. Jika karakter tidak cocok, program menyimpulkan bahwa string tidak merupakan palindrom. Jika semua karakter cocok, maka string tersebut adalah palindrom.
+
+## 2. Buatlah program untuk melakukan pembalikan terhadap kalimat menggunakan stack dengan minimal 3 kata. Jelaskan output program dan source codenya beserta operasi/fungsi yang dibuat?
+
+## Source Code 
+```C++
+#include <iostream>
+#include <stack>
+#include <string>
+using namespace std;
+
+string reverseSentence(string sentence) {
+    stack<char> charStack;
+
+    for (char c : sentence) {
+        charStack.push(c);
+    }
+
+    string reversedSentence = "";
+
+    while (!charStack.empty()) {
+        reversedSentence += charStack.top();
+        charStack.pop();
+    }
+
+    return reversedSentence;
+}
+
+int main() {
+    char pilihan;
+    do {
+        string kalimat;
+        cout << "Masukkan kalimat: ";
+        getline(cin, kalimat);
+
+      
+        if (kalimat.empty()) {
+            cout << "Kalimat tidak boleh kosong. Silakan coba lagi." << endl;
+            continue;
+        }
+
+        string hasil = reverseSentence(kalimat);
+
+        cout << "Hasil Kalimat: " << hasil << endl;
+
+        
+        cout << "Apakah anda ingin mengubah kalimatnya? (y/n): ";
+        cin >> pilihan;
+        cin.ignore(); 
+    } while (pilihan == 'y' || pilihan == 'Y');
+
+    return 0;
+}
+```
+
+## Ouput Progam
+<img width="683" alt="tulu" src="https://github.com/MendoanGeprek/Struktur---Data---Assignnment/assets/161665370/742d8391-50e7-423d-87df-56d23471048c">
+
+## Deskripsi Progam 
+pada program tersebut, pengguna diminta memasukkan sebuah kalimat. Kemudian, kalimat tersebut dibalikkan menggunakan fungsi "reverseSentence()" yang menggunakan struktur data stack. kemudian, hasilnya akan ditampilkan ke layar. selanjutnya pengguna bisa mengubah kata yang ingin dibalikkan lagi atau tidak. Jika pengguna memilih "y", maka program akan kembali meminta input kalimat dan mengulangi proses pembalikan. Jika pengguna memilih untuk tidak melanjutkan, program akan selesai dan menampilkan pesan "Terima kasih!".
+
+
+kemudian pada bagian operasi atau fungsi yang digunakan :
+"reverseSentence(string sentence)" Fungsi ini menerima sebuah kalimat dan menggunakan stack untuk membalikkan kalimat tersebut. Setiap karakter dari kalimat dimasukkan ke dalam stack, kemudian karakter-karakter tersebut dikeluarkan dari stack satu per satu untuk membentuk kalimat terbalik.
+
+## Kesimpulan
+stack (tumpukan) adalah struktur data yang mengikuti prinsip LIFO (Last In, First Out), yang berarti elemen yang terakhir dimasukkan ke dalam stack akan menjadi elemen pertama yang dikeluarkan. Ini mirip dengan tumpukan benda di kehidupan nyata, di mana Anda menumpuk satu objek di atas yang lain dan yang Anda ambil pertama kali adalah yang terakhir Anda letakkan. Stack biasanya memiliki dua operasi utama: "push" untuk menambahkan elemen ke dalam stack, dan "pop" untuk mengeluarkan elemen teratas dari stack.
+
+stack biasanya diimplementasikan menggunakan struktur data dari STL (Standard Template Library) yang disebut "std::stack". Struktur data ini menyediakan fungsi-fungsi yang diperlukan untuk memanipulasi stack dengan mudah.
+
+## Daftar Pustaka
+[1] T. Kim and Y. Shin, "Reinforcing meltdown attack by using a return stack buffer", IEEE Access, vol. 7, pp. 186065-186077, 2019.
+[2] E. M. Koruyeh et al., "SpecCFI: Mitigating spectre attacks using CFI informed speculation", Proc. IEEE Symp. Secur. Privacy (SP), pp. 39-53, May 2020.
