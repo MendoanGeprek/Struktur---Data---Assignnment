@@ -359,6 +359,7 @@ Queue dalam C++ adalah struktur data FIFO yang dapat diimplementasikan dengan ar
 
 ## Refrensi 
 [1] A. D. Istoko, Pengembangan Mesin Antrean Berbasis Web Menggunakan Raspberry Dan ESP8266, Yogyakarta, Indonesia: Skripsi, 2018.
+
 [2] D. J. N. Salim, W. Sanjaya, A. R. Pamungkas dan A. K. Indarto, “Sistem Antrian Berbasis Web Menggunakan Raspberry dan ESP8266,” Go Infotech: Jurnal Ilmiah STMIK AUB, vol. 25, pp. 62-70, 2019.
 
 
