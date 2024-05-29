@@ -66,7 +66,7 @@ Fungsi tampilGraph digunakan untuk menampilkan grafik jaringan. Fungsi ini mengg
 Pada bagian main, fungsi tampilGraph dipanggil untuk menampilkan grafik jaringan. Hasilnya adalah sebuah output yang menampilkan nama-nama kota dan jarak antar kota yang bersangkutan.
 
 
-## Guided 2
+### Guided 2
 ```cpp
 #include <iostream>
 using namespace std;
