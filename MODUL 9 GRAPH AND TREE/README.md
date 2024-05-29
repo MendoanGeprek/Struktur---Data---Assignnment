@@ -475,8 +475,7 @@ Program ini adalah implementasi dari pohon biner (binary tree) dalam bahasa C++.
 ## Unguided 1
 Buatlah program graph dengan menggunakan inputan user untuk menghitung
 jarak dari sebuah kota ke kota lainnya.
-
-Output Program
+(Output Program)
 <img width="302" alt="ululul" src="https://github.com/MendoanGeprek/Struktur---Data---Assignnment/assets/161665370/c619ec50-e64c-4bba-8d5e-714c16f906f8">
 
 ### Code Progam
