@@ -375,4 +375,5 @@ Dalam praktikum ini, kita mempelajari tentang tipe data yang terdiri dari tiga j
 
 ## Referensi
 [1]  Pratama, M. A. (2020, March 29). STRUKTUR DATA ARRAY DUA DIMENSI  PADA PEMROGRAMAN C++. 
+
 [2]   Wahyuni, Z. (2023, February 27). Makalah Dasar-dasar pemograman Komputer.
