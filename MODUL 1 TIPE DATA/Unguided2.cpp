@@ -28,10 +28,10 @@ int main()
 {
     Mahasiswa mhs;
     mhs.nama = "Budi";
-    mhs.umur = 20;
+    mhs.umur = 23;
     cout << "Nama mahasiswa: " << mhs.nama << endl;
     cout << "Umur mahasiswa: " << mhs.umur << endl;
-    Mobil mobil("Toyota", 2020);
+    Mobil mobil("Mcalren", 2023);
     mobil.tampilkanInfo();
 
     return 0;
