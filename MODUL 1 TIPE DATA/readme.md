@@ -335,12 +335,12 @@ cout << "Alamat: " << mhs.address << endl;
 
 return 0; 
 }
-
+```
 Class : Class adalah tipe data khusus dalam bahasa pemrograman yang dapat menyimpan data dan fungsi di dalamnya. Class digunakan untuk mewakili objek yang terdiri dari beberapa properti (data) dan metode (fungsi) yang digunakan untuk memanipulasi data tersebut
 
 ### 3. Buat dan jelaskan program menggunakan fungsi map dan jelaskan perbedaan array dengan map.
 
-'''C++
+```C++
 #include <iostream>
 #include <map>
 using namespace std;
