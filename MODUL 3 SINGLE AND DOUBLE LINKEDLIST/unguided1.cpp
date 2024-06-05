@@ -2,214 +2,222 @@
 #include <string>
 using namespace std;
 
-// Struktur Node
+// Deklarasi Struct Node
 struct Node
 {
-  string nama;
-  int usia_189;
-  Node *next;
+    string nama;
+    int usia;
+    Node *next;
 };
 
-// Kelas Linked List
-class LinkedList
+Node *head = NULL; // Pointer yang menunjuk ke node pertama (head) dari linked list
+Node *tail = NULL; // Pointer yang menunjuk ke node terakhir (tail) dari linked list
+
+// Fungsi untuk menambah node baru di depan
+void insertDepan(string nama, int usia)
 {
-private:
-  Node *head;
+    Node *baru = new Node; // Membuat node baru
+    baru->nama = nama;     // Mengisi data nama pada node baru
+    baru->usia = usia;     // Mengisi data usia pada node baru
 
-public:
-  LinkedList() : head(nullptr) {}
+    // Menambahkan node baru di depan head
+    baru->next = head; // Node baru menunjuk ke node yang ditunjuk oleh head
+    head = baru;       // Head menunjuk ke node baru
 
-  // Fungsi untuk menyisipkan data di akhir daftar
-  void sisipkan(string nama, int usia_189)
-  {
-    Node *newNode = new Node;
-    newNode->nama = nama;
-    newNode->usia_189 = usia_189;
-    newNode->next = nullptr;
-
-    if (head == nullptr)
+    // Jika linked list sebelumnya kosong, tail juga perlu diubah
+    if (tail == NULL)
     {
-      head = newNode;
+        tail = baru;
+    }
+}
+
+// Fungsi untuk menambah node baru di belakang
+void insertBelakang(string nama, int usia)
+{
+    Node *baru = new Node; // Membuat node baru
+    baru->nama = nama;     // Mengisi data nama pada node baru
+    baru->usia = usia;     // Mengisi data usia pada node baru
+    baru->next = NULL;     // Mengatur pointer next node baru menjadi NULL
+
+    if (head == NULL) // Jika linked list kosong
+    {
+        head = baru; // Head menunjuk ke node baru
+        tail = baru; // Tail juga menunjuk ke node baru karena hanya ada satu node dalam linked list
+    }
+    else // Jika linked list tidak kosong
+    {
+        tail->next = baru; // Menambahkan node baru setelah tail
+        tail = baru;       // Mengubah tail untuk menunjuk ke node baru yang merupakan node terakhir
+    }
+}
+
+// Fungsi untuk menambah node baru di tengah
+void insertTengah(string nama, int usia, string namaSebelumnya)
+{
+    Node *baru = new Node; // Membuat node baru
+    baru->nama = nama;     // Mengisi data nama pada node baru
+    baru->usia = usia;     // Mengisi data usia pada node baru
+
+    Node *bantu = head;
+    while (bantu != NULL && bantu->nama != namaSebelumnya) // Mencari node dengan namaSebelumnya
+    {
+        bantu = bantu->next;
+    }
+
+    if (bantu == NULL) // Jika node dengan namaSebelumnya tidak ditemukan
+    {
+        cout << "Data tidak ditemukan" << endl;
+        return;
+    }
+
+    baru->next = bantu->next; // Mengatur pointer next node baru
+    bantu->next = baru;       // Menambahkan node baru setelah node dengan namaSebelumnya
+}
+
+// Fungsi untuk menampilkan semua data
+void tampil()
+{
+    Node *bantu = head;
+    if (bantu == NULL) // Jika linked list kosong
+    {
+        cout << "List kosong!" << endl;
+        return;
+    }
+
+    while (bantu != NULL) // Menampilkan data setiap node dalam linked list
+    {
+        cout << bantu->nama << "\t" << bantu->usia << endl;
+        bantu = bantu->next;
+    }
+}
+
+// Fungsi untuk menghapus node dengan nama tertentu
+void hapus(string nama)
+{
+    Node *hapus = head;
+    Node *sebelum = NULL;
+
+    while (hapus != NULL && hapus->nama != nama) // Mencari node dengan nama yang akan dihapus
+    {
+        sebelum = hapus;
+        hapus = hapus->next;
+    }
+
+    if (hapus == NULL) // Jika node dengan nama yang akan dihapus tidak ditemukan
+    {
+        cout << "Data tidak ditemukan" << endl;
+        return;
+    }
+
+    if (sebelum == NULL) // Jika node yang akan dihapus adalah head
+    {
+        head = hapus->next; // Mengubah head menjadi node setelah node yang dihapus
     }
     else
     {
-      Node *temp = head;
-      while (temp->next != nullptr)
-      {
-        temp = temp->next;
-      }
-      temp->next = newNode;
+        sebelum->next = hapus->next; // Mengubah pointer next node sebelumnya untuk menghapus node yang dituju
     }
-  }
 
-  // Fungsi untuk menampilkan semua data dalam daftar
-  void tampilkan()
-  {
-    Node *temp = head;
-    while (temp != nullptr)
+    delete hapus; // Menghapus node yang dihapus dari memory
+}
+
+// Fungsi untuk mengubah data mahasiswa dengan nama tertentu
+void ubahData(string nama, string namaBaru, int usiaBaru)
+{
+    Node *ubah = head;
+
+    while (ubah != NULL && ubah->nama != nama) // Mencari node dengan nama yang akan diubah
     {
-      cout << temp->nama << " " << temp->usia_189 << endl;
-      temp = temp->next;
+        ubah = ubah->next;
     }
-  }
 
-  // Fungsi untuk menghapus node berdasarkan nama
-  void hapusNode(string nama)
-  {
-    if (head == nullptr)
+    if (ubah == NULL) // Jika node dengan nama yang akan diubah tidak ditemukan
     {
-      return;
+        cout << "Data tidak ditemukan" << endl;
+        return;
     }
 
-    Node *temp = head;
-    Node *prev = nullptr;
-
-    // Jika node head sendiri menyimpan nama yang akan dihapus
-    if (temp != nullptr && temp->nama == nama)
-    {
-      head = temp->next;
-      delete temp;
-      return;
-    }
-
-    // Mencari node yang akan dihapus
-    while (temp != nullptr && temp->nama != nama)
-    {
-      prev = temp;
-      temp = temp->next;
-    }
-
-    // Jika nama tidak ada dalam daftar
-    if (temp == nullptr)
-    {
-      return;
-    }
-
-    // Memutuskan hubungan node dari linked list
-    prev->next = temp->next;
-    delete temp;
-  }
-
-  // Fungsi untuk menyisipkan node setelah node tertentu
-  void sisipkanSetelah(string namaSebelum, string nama, int usia_189)
-  {
-    Node *newNode = new Node;
-    newNode->nama = nama;
-    newNode->usia_189 = usia_189;
-
-    Node *temp = head;
-    while (temp != nullptr && temp->nama != namaSebelum)
-    {
-      temp = temp->next;
-    }
-
-    if (temp == nullptr)
-    {
-      cout << namaSebelum << " tidak ditemukan dalam daftar." << endl;
-      return;
-    }
-
-    newNode->next = temp->next;
-    temp->next = newNode;
-  }
-
-  // Fungsi untuk menyisipkan node di awal daftar
-  void sisipkanDiAwal(string nama, int usia_189)
-  {
-    Node *newNode = new Node;
-    newNode->nama = nama;
-    newNode->usia_189 = usia_189;
-
-    newNode->next = head;
-    head = newNode;
-  }
-
-  // Fungsi untuk mengubah data berdasarkan nama
-  void ubah(string nama, string namaBaru, int usiaBaru)
-  {
-    Node *temp = head;
-    while (temp != nullptr && temp->nama != nama)
-    {
-      temp = temp->next;
-    }
-
-    if (temp == nullptr)
-    {
-      cout << nama << " tidak ditemukan dalam daftar." << endl;
-      return;
-    }
-
-    temp->nama = namaBaru;
-    temp->usia_189 = usiaBaru;
-  }
-};
+    ubah->nama = namaBaru; // Mengubah data nama pada node yang ditemukan
+    ubah->usia = usiaBaru; // Mengubah data usia pada node yang ditemukan
+}
 
 int main()
 {
-  LinkedList daftar;
+    // Menambahkan data
+    insertBelakang("John", 19);
+    insertBelakang("Jane", 20);
+    insertBelakang("Michael", 18);
+    insertBelakang("Yusuke", 19);
+    insertBelakang("Akechi", 20);
+    insertBelakang("Hoshino", 18);
+    insertBelakang("Karin", 18);
 
-  // Memasukkan data
-  daftar.sisipkan("Rangga", 20);
-  daftar.sisipkan("John", 19);
-  daftar.sisipkan("Jane", 20);
-  daftar.sisipkan("Michael", 18);
-  daftar.sisipkan("Yusuke", 19);
-  daftar.sisipkan("Akechi", 20);
-  daftar.sisipkan("Hoshino", 18);
-  daftar.sisipkan("Karin", 18);
+    char menu;
+    string nama, namaBaru;
+    int usia, usiaBaru;
 
-  char pilihan;
-  string nama, namaBaru;
-  int usia_189, usiaBaru;
-
-  do
-  {
-    cout << "Menu:" << endl;
-    cout << "a. Tampilkan semua data" << endl;
-    cout << "b. Hapus data Akechi" << endl;
-    cout << "c. Tambahkan data di antara John dan Jane" << endl;
-    cout << "d. Tambahkan data di awal" << endl;
-    cout << "e. Ubah data Michael" << endl;
-    cout << "f. Keluar" << endl;
-    cout << "Pilih menu: ";
-    cin >> pilihan;
-
-    switch (pilihan)
+    // Menampilkan menu
+    do
     {
-    case 'a':
-      break;
-    case 'b':
-      daftar.hapusNode("Akechi");
-      cout << "Data Akechi telah dihapus." << endl;
-      break;
-    case 'c':
-      cout << "Masukkan nama dan usia_189 yang ingin ditambahkan: ";
-      cin >> nama >> usia_189;
-      daftar.sisipkanSetelah("John", nama, usia_189);
-      break;
-    case 'd':
-      cout << "Masukkan nama dan usia_189 yang ingin ditambahkan di awal: ";
-      cin >> nama >> usia_189;
-      daftar.sisipkanDiAwal(nama, usia_189);
-      break;
-    case 'e':
-      cout << "Masukkan nama dan usia_189 baru untuk Michael: ";
-      cin >> namaBaru >> usiaBaru;
-      daftar.ubah("Michael", namaBaru, usiaBaru);
-      break;
-    case 'f':
-      cout << "Keluar dari program." << endl;
-      break;
-    default:
-      cout << "Pilihan tidak valid." << endl;
-    }
+        cout << "\nMenu:\n";
+        cout << "1. Masukkan data\n";
+        cout << "2. Hapus data Akechi\n";
+        cout << "3. Tambahkan data di antara John dan Jane\n";
+        cout << "4. Tambahkan data di awal\n";
+        cout << "5. Ubah data Michael\n";
+        cout << "6. Tampilkan seluruh data\n";
+        cout << "7. Keluar\n";
+        cout << "Pilih menu: ";
+        cin >> menu;
 
-    // Menampilkan data setelah setiap operasi
-    cout << "Data mahasiswa:" << endl;
-    daftar.tampilkan();
-    cout << endl;
+        switch (menu)
+        {
+            // Input nama dan usia saya
+        case '1':
+            cout << "Masukkan nama dan usia: ";
+            cin >> nama >> usia;
+            insertDepan(nama, usia);
+            cout << "Data berhasil di tambahkan" << endl;
+            break;
+            // Hapus data akechi
+        case '2':
+            hapus("Akechi");
+            cout << "Data Akechi telah di hapus" << endl;
+            break;
+            // Tambahkan data berikut diantara John dan Jane : Futaba 18
+        case '3':
+            cout << "Masukkan nama dan usia: ";
+            cin >> nama >> usia;
+            insertTengah("Futaba", 18, "John");
+            cout << "Data futaba telah di tambahkan" << endl;
+            break;
+            // Tambahkan data berikut diawal : Igor 20
+        case '4':
+            cout << "Masukkan nama dan usia: ";
+            cin >> nama >> usia;
+            insertDepan(nama, usia);
+            cout << "Data telah di tambahkan" << endl;
+            break;
+            // Ubah data Michael menjadi : Reyn 18
+        case '5':
+            cout << "Masukkan nama baru, usia baru: ";
+            cin >> namaBaru >> usiaBaru;
+            ubahData("Michael", namaBaru, usiaBaru);
+            cout << "Data berhasil diubah" << endl;
+            break;
+            // Menampilkan data
+        case '6':
+            tampil();
+            break;
+            // Keluar program
+        case '7':
+            cout << "Keluar dari program." << endl;
+            break;
+            // Jika menu tidak valid
+        default:
+            cout << "Menu tidak valid!" << endl;
+        }
+    } while (menu != 'g');
 
-  } while (pilihan != 'f');
-
-  return 0;
+    return 0;
 }
