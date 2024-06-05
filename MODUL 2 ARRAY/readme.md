@@ -118,3 +118,35 @@ int main()
 <img width="694" alt="wahaaa" src="https://github.com/MendoanGeprek/Struktur---Data---Assignnment/assets/161665370/7f5771c0-8a33-4443-bbe4-2799260a2da5">
 
 ### Deskripsi Progam
+
+
+## UNGUIDED
+
+## Unguided 1
+
+### Source Progam
+
+### Ouput Progam
+
+### Deskripsi Progam
+
+## Unguided 2
+
+### Source Progam
+
+### Output Progam
+
+### Deskripsi Progam
+
+## Unguided 3
+
+### Source Progam
+
+### Output Progam
+
+### Deskripsi Progam
+
+## Kesimpulan
+
+## Refrensi
+
